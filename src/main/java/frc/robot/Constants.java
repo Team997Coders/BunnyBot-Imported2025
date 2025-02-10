@@ -19,36 +19,6 @@ import edu.wpi.first.wpilibj.I2C;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-  public static class PickerUper {
-    //TODO: Get motor id for 4-bar-linkage controller
-    public static final int LinkageMotorID = 0;
-    //TODO: Get starting target position of the 4 bar linkage (probably up)
-    public static final double startTargetPosition = 0.0;
-    //TODO: Get Limit switch (Digital input) id# for both top and bottom max
-    public static final int topLimitSwitchID = 1;
-    public static final int bottomLimitSwitchID = 0;
-    public static final int crateSensorID = 0;
-    //TODO: fix the inequalities in cratePickerUperController Command for corrected limit switch locations
-    public static final double topLimitSwitchPosition = 0;
-    public static final double bottomLimitSwitchPosition = 0;
-    //TODO: Tune PID for the CratePickerUper
-    public static class pid {
-      public static final double p = 0.1;
-      public static final double i = 0;
-      public static final double d = 0; 
-    }
-    //TODO: Set the four positions for 4-bar-linkage targets
-    public static final List<Double> targetPositions = Arrays.asList(
-      0.0, 0.0, 0.0, 0.0);
-    //      1    2    3    4
-    //1: All the way Up
-    //2: Crate up holding position
-    //3: Crate ready to pick up position
-    //4: Crate pick up
-    //TODO: set manual output and voltage for cratePickerUper
-    public static final double manualOutput = 0.0;
-    public static final double manualVoltage = 0.0;
-  }
 
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
@@ -56,16 +26,16 @@ public final class Constants {
 
   public static class Drivetrain  {
     public static final int frontRightCANID = 5; //CAN
-    public static final int frontLeftCANID = 8;
     public static final int backRightCANID = 6;
+
+    public static final int frontLeftCANID = 8;
     public static final int backLeftCANID = 7;
 
-    //public static final int rightEncoderInput = 0; //DIO
-    //public static final int leftEncoderInput = 1;
   }
     public static class Intake {
-      public static final int intakeMotorID = 0; //PWM
-      public static final int topLimitSwitchID = 1;
+      public static final int intakeMotorID = 9; //PWM
+
+      public static final int topLimitSwitchID = 1;//DIO
       public static final int bottomLimitSwitchID = 2;
 
       public static final double defaultSpinnerSpeed = 0.3;
